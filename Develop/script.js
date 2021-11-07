@@ -1,7 +1,9 @@
 // Assignment code here
-var passwordText = promt("How many characters would you like your password to be?");
 
-if(passwordText < 8 || passwordTex > 128){
+
+var passwordText = promt("How many characters would you want your password to be?");
+
+if(passwordText < 8 || passwordText > 128){
   alert("The length should be in between 8 to 128 characters");
 }
 if(passwordText >= 8 && passwordText <= 128){
@@ -75,9 +77,9 @@ function randomSymbol(){
 //   var password = generatePassword();
 //   var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  // passwordText.value = password;
 
 // }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+btn.addEventListener("click", writePassword);
