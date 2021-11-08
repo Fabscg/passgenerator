@@ -1,7 +1,7 @@
 // Assignment code here
 
 
-var passwordText = promt("How many characters would you want your password to be?");
+var passwordText = prompt("How many characters would you want your password to be?");
 
 if(passwordText < 8 || passwordText > 128){
   alert("The length should be in between 8 to 128 characters");
@@ -19,55 +19,62 @@ if(passwordText >= 8 && passwordText <= 128){
 
   var passwordResult = document.getElementById("password");
 
-  document.getElementById("#generate").addEventListener("click", () => {
-    var includeLowercase = charLowercase.true;
-    var includeUppercase = charUppercase.true;
-    var includeNumbers = charNumbers.true;
-    var includeSymbols = charSymbols.true;
-    passwordResult.innerHTML = generatePassword(includeLowercase, includeNumbers,includeSymbols, includeUppercase, length);
-  });
+  // document.getElementById("generatedPassword").addEventListener("click", () => {
+  //   var includeLowercase = charLowercase.true;
+  //   var includeUppercase = charUppercase.true;
+  //   var includeNumbers = charNumbers.true;
+  //   var includeSymbols = charSymbols.true;
+  //   passwordResult.innerHTML = generatePassword(includeLowercase, includeNumbers,includeSymbols, includeUppercase, length);
 
-  var random = {
-    lower: randomLowercase, upper:randomUppercase, 
-    number: randomNumbers,
-    symbol:randomSymbol
+
+  // });
+
+  var randomFunc = {
+    lower: getRandomLower, 
+    upper:getRandomUpper, 
+    number: getRandomNumber,
+    symbol:getRandomSymbol
   }
 
-  function generatePassword(lower, upper, number, symbol, length){
+  function generatedPassword(lower, upper, number, symbol, length){
     var generatePassword = "";
     var characterCounter = lower + upper + number + symbol;
     var arrayChar = [{lower},{upper},{number},{symbol}].filter(item => Object.values(item)[0]);
 
+    if (characterCounter === 0){
+      return "";
+    }
+
     for (var i = 0;i<length;i+=characterCounter)
     arrayChar.forEach(type => {
       var funcName = Object.keys(type)[0];
-      generatePassword += random[funName]();
+      generatePassword += randomfunc[funcName]();
     })
   }
 
-var finalPassword = generatePassword.slice(0,length);
-console.log(finalPassword);
+const finalPassword = generatedPassword.slice(0,length);
 
-}
+prompt(finalPassword) ;
 
-function randomLowercase(){
+// }
+
+function getRandomLower(){
   return String.fromCharCode(Math.floor(Math.random() * 26) +97);
 }
 
-function randomUppercase(){
+function getRandomUpper(){
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 
-function randomNumbers(){
+function getRandomNumber(){
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
-function randomSymbol(){
-  var symbols = (33,47).concat(58, 64);
+function getRandomSymbol(){
+  const symbols =  !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   return symbols[Math.floor(Math.random() * symbols.lenth)];
-
-  
 }
+document.getElementById("#generate").addEventListener("click", finalPassword);
 
 // // Get references to the #generate element
 // var generateBtn = document.querySelector("#generate");
@@ -82,4 +89,4 @@ function randomSymbol(){
 // }
 
 // Add event listener to generate button
-btn.addEventListener("click", writePassword);
+}
