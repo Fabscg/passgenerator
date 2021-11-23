@@ -13,10 +13,14 @@ var charLength = 128;
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+//create a function that will generate the password accordding to the reply of the users preference of characters
+
 function generatePassword() {
     var password = ''
     var currentString = ''
     var plength = prompt("Choose the number of characters that you would like in your password");
+
+    //while loop created to go through the length of the characters and symbol to get random  
 
     while (plength < 8 || plength > 128) {
         alert("Length must be between 8-128 characters.")
@@ -36,6 +40,8 @@ function generatePassword() {
         hasSymbols = confirm("Would you like to ad special symbols?");
     }
 
+    //if statment to comfirm what characters were choosen
+
     if (charUppercase) {
         currentString += upperCase
     }
@@ -49,6 +55,8 @@ function generatePassword() {
         currentString += symbols
     }
 
+    //after checking what characters are the ones in use, then a for-loop  will be done to get the random password with Math.random and Math.floor multiply by the currentString.length
+
     for (var i = 0; i < plength; i++) {
         password += currentString.charAt(Math.floor(Math.random() * currentString.length))
     }
@@ -58,6 +66,7 @@ function generatePassword() {
 }
 
 // Write password to the #password input
+
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
