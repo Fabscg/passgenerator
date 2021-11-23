@@ -19,8 +19,8 @@ function generatePassword() {
     var plength = prompt("Choose the number of characters that you would like in your password");
 
     while (plength < 8 || plength > 128) {
-        plength = prompt("Choose the number of characters that you would like in your password");
         alert("Length must be between 8-128 characters.")
+        plength = prompt("Choose the number of characters that you would like in your password");
     }
 
     var charUppercase = confirm("Would you like to add uppercase?");
@@ -28,7 +28,7 @@ function generatePassword() {
     var charNumbers = confirm("Would you like to add numbers?");
     var hasSymbols = confirm("Would you like to ad special symbols?");
 
-    while (charUppercase != true && charLowerCase != true && charNumbers != hasSymbols != true) {
+    while (!(charUppercase) && !(charLowerCase) && !(charNumbers) && !(hasSymbols)) {
         alert("You must select at least one character type!");
         charUppercase = confirm("Would you like to add uppercase?");
         charLowerCase = confirm("Would you like to ad lowercase?");
