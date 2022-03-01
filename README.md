@@ -8,10 +8,10 @@ When you press the button **"Password Generator"** you have some prompts, asking
 as a result of the user's information, then the user gets a password with different characters and the number of characters requested.
 
 ## GitHub Repo:
-# [Passgenerator](git@github.com:Fabskickass/passgenerator.git)
+# [Passgenerator](https://github.com/Fabscg/passgenerator)
 
 ## Deployed URL:
-# [https://fasbskickass.github.io/passgenerator](https://fabskickass.github.io/passgenerator/)
+# [https://fasbskickass.github.io/passgenerator](https://fabscg.github.io/passgenerator/)
 
 ## Screenshot:
 # ![Password-Generator](images/passGenerator.png)
