@@ -11,7 +11,7 @@ as a result of the user's information, then the user gets a password with differ
 # [Passgenerator](https://github.com/Fabscg/passgenerator)
 
 ## Deployed URL:
-# [https://fasbskickass.github.io/passgenerator](https://fabscg.github.io/passgenerator/)
+# [Github URL](https://fabscg.github.io/passgenerator/)
 
 ## Screenshot:
 # ![Password-Generator](images/passGenerator.png)
